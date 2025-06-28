@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow: auto; /* 모바일에서 콘텐츠가 넘칠 경우 스크롤 허용 */
+    -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 적용 */
+}
+
+.background-container {
+    background-image: url('엄청난 수호신과 정화의 기운ChatGPT Image 2025년 6월 19일 오전 09_30_29.png');
+    background-size: contain; /* 이미지 전체가 화면에 들어가도록 비율 유지 */
+    background-position: center center; /* 배경 이미지 중앙 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+    min-height: 100vh; /* 최소 높이를 뷰포트 높이로 설정 */
+    display: flex;
+    flex-direction: column; /* 내용을 세로로 배치 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out; /* 배경 이미지 로딩 시 페이드인 효과 */
+    padding: 20px; /* 모바일 화면 가장자리 여백 추가 */
+    box-sizing: border-box; /* 패딩이 전체 크기에 영향 주지 않도록 함 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.5); /* 내용 영역의 반투명 배경 */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); /* 배경 블러 효과 */
+    animation: slideIn 1s ease-out forwards; /* 내용 영역 슬라이드인 효과 */
+    width: 90%; /* 모바일 화면 너비에 맞게 조절 */
+    max-width: 500px; /* 최대 너비 제한 */
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #A9D18E; /* 부드러운 녹색 계열 */
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #8EBA42; /* 버튼 색상 - 배경과 어울리는 녹색 */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #6A8E35;
+    transform: translateY(-3px);
+}
+
+.message-box {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #E8F5E9; /* 밝은 녹색 계열 */
+    opacity: 0; /* 초기에는 숨김 */
+    animation: fadeMessageIn 0.8s ease-out forwards; /* 메시지 표시 시 페이드인 */
+    animation-delay: 0.5s; /* 버튼 클릭 후 약간의 지연 */
+    word-break: break-word; /* 긴 메시지 줄바꿈 처리 */
+}
+
+@keyframes fadeMessageIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.disclaimer {
+    font-size: 0.7em; /* 모바일에서 적절한 크기로 조절 */
+    color: #fdd835; /* 눈에 잘 띄는 노란색 계열 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* 텍스트 그림자로 가독성 향상 */
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center; /* 가운데 정렬 */
+    line-height: 1.4; /* 줄 간격 조절 */
+    background-color: rgba(0, 0, 0, 0.6); /* 배경색 추가로 더 잘 보이게 함 */
+    border-radius: 5px; /* 약간의 둥근 테두리 */
+    box-sizing: border-box; /* 패딩, border가 width, height에 영향 X */
+    width: 90%; /* 모바일 화면 너비에 맞춰 조절 */
+    max-width: 400px; /* 최대 너비 제한 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 모바일 반응형 디자인 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .content-wrapper {
+        padding: 20px 30px;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .message-box {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .disclaimer {
+        font-size: 0.7em; /* 모바일에서 적절한 크기로 조절 */
+    }
+}
+
+@media (min-width: 601px) { /* 태블릿 이상 화면 */
+    .disclaimer {
+        font-size: 0.8em; /* 더 넓은 화면에서 약간 더 크게 */
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .content-wrapper {
+        padding: 15px 20px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 8px 15px;
+    }
+
+    .message-box {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .disclaimer {
+        font-size: 0.65em; /* 작은 모바일에서 더 작게 */
+        padding: 8px 15px;
+    }
+}
